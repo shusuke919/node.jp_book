@@ -1,9 +1,9 @@
 import bodyParser from "body-parser";
 import express from "express";
 import request from "request";
+
 const app = express();
 const port = 3001;
-
 
 app.use("/", express.static("public"));
 // 🔽 追加 POSTでデータを受け取るために必要
@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use(bodyParser.json());
+
 app.post("/auth/", (req, res) => {
   const options = {
     method: 'GET',
